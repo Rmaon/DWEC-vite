@@ -1,0 +1,209 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Asegurar fondo de página y evitar scroll horizontal que muestre franjas */
+html, body {
+  /* Fondo: degradado 'estelar' en tonos verdes, con #8ADD1E como base */
+  background-image: 
+    radial-gradient(circle at 20% 10%, rgba(255,255,255,0.12) 0px, rgba(255,255,255,0.06) 2px, transparent 6px),
+    radial-gradient(circle at 80% 80%, rgba(255,255,255,0.08) 0px, transparent 8px),
+    radial-gradient(circle at 50% 40%, #8ADD1E 0%, #7cd116 25%, #58a20d 55%, #2f5f06 100%);
+  background-blend-mode: screen, screen, normal;
+  background-color: #8ADD1E; /* fallback */
+  overflow-x: hidden;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.vanilla:hover {
+  filter: drop-shadow(0 0 2em #f7df1eaa);
+}
+
+.card {
+  padding: 2em;
+}
+
+/* Estilos para el gestor de tareas */
+.task-card {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* Imagen del gato en esquina inferior derecha, sin marco ni sombra */
+#catImage {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 140px;
+  height: auto;
+  background: transparent;
+  z-index: 9999;
+  
+
+#catImage {
+  display: block;
+}
+}
+
+@media (max-width: 600px) {
+  #catImage {
+    display: none;
+  }
+}
+.task-add {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+#addTaskButton {
+  /* Degradado rosa */
+  background: linear-gradient(90deg, #ff9ecb 0%, #ff7bb0 50%, #ff4d9e 100%);
+  color: white;
+  border: none;
+  padding: 0.6rem 0.9rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 120ms ease, filter 120ms ease;
+}
+#addTaskButton:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+#addTaskButton:active {
+  transform: translateY(0);
+}
+#addTaskButton:focus {
+  outline: 3px solid rgba(100,108,255,0.35);
+}
+#taskInput {
+  flex: 1 1 auto;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.03);
+  color: inherit;
+}
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.task-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.02);
+}
+.task-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+.task-label {
+  flex: 1 1 auto;
+}
+.task-label.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+.task-delete {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 0.4rem 0.6rem;
+}
+.task-list .empty {
+  color: #404040;
+  padding: 0.6rem;
+}
+
+.read-the-docs {
+  color: #404040;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background-color: red;
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #ee91ff;
+  }
+}
